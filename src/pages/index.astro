@@ -23,31 +23,27 @@ if (hasPinnedPosts) {
 }
 ---
 
-<Layout title="Readme" description={SITE.description}>
+<Layout title="关于我" description={SITE.description}>
   <div class="relative z-[1]">
     <div class="py-8 pb-10 px-6 sm:px-8">
       <h1 class="flex flex-col gap-2">
-        <span class="text-4xl sm:text-5xl tracking-tight"> Litos </span>
+        <span class="text-4xl sm:text-5xl tracking-tight">{SITE.title}</span>
         <span class="text-muted-foreground font-light text-xl sm:text-2xl block tracking-wide text-balance">
-          A Simple & Modern Blog Theme for Astro
+          一个简单、现代的博客
         </span>
       </h1>
       <div class="pro text-muted-foreground text-pretty">
+        <p>用来写文章、放项目，也记下日常。版式干净，阅读优先。</p>
         <p>
-          Litos is a clean and modern Astro blog theme focused on content presentation and reading experience. More than just a blog, it's a
-          personal space to showcase your skills, projects, and life.
-        </p>
-        <p>
-          Built with Tailwind CSS for elegant responsive design and React components for smooth interactions. Features light/dark theme
-          switching, multiple article layouts, GitHub contribution charts, and more. Inspired by
-          <a href="https://github.com/needim" target="_blank" rel="nofollow noreferrer">@needim</a>, redesigned by
-          <a href="https://github.com/Dnzzk2" target="_blank" rel="nofollow noreferrer">@Dnzzk2</a> based on Astro.
+          基于 Astro，样式用 Tailwind CSS。支持明暗主题、多种文章布局，以及 GitHub 贡献图。灵感来自
+          <a href="https://github.com/needim" target="_blank" rel="nofollow noreferrer">@needim</a>，由
+          <a href="https://github.com/Dnzzk2" target="_blank" rel="nofollow noreferrer">@Dnzzk2</a> 重新设计。
         </p>
       </div>
       <div class="mt-6 flex gap-6">
         {
           SOCIAL_LINKS.map((item) => {
-            return <SocialLink href={item.url} icon={item.icon} aria-label={`Link of ${item.name}`} count={item.count} label="followers" />
+            return <SocialLink href={item.url} icon={item.icon} aria-label={`${item.name} 链接`} count={item.count} label="关注" />
           })
         }
       </div>
@@ -58,8 +54,8 @@ if (hasPinnedPosts) {
           <SectionDivider />
           <div class="py-8 pb-10 px-6 max-md:px-6">
             <div class="px-2 max-md:px-0">
-              <h2 class="text-2xl sm:text-3xl">Spotlight</h2>
-              <p class="text-muted-foreground mb-6 mt-1">GitHub contributions in the past year:</p>
+              <h2 class="text-2xl sm:text-3xl">动态</h2>
+              <p class="text-muted-foreground mb-6 mt-1">过去一年的 GitHub 贡献：</p>
             </div>
             <GithubContributions username={GITHUB_USERNAME} tooltipEnabled={TOOLTIP_ENABLED} client:load transition:animate="none" />
           </div>
@@ -72,8 +68,8 @@ if (hasPinnedPosts) {
           <SectionDivider />
           <div class="py-8 pb-10 px-6 max-md:px-6">
             <div class="px-2 max-md:px-0">
-              <h2 class="text-2xl sm:text-3xl tracking-tight">Skills</h2>
-              <p class="text-muted-foreground mb-6 mt-1">It's not just skills, but also tools:</p>
+              <h2 class="text-2xl sm:text-3xl tracking-tight">技能</h2>
+              <p class="text-muted-foreground mb-6 mt-1">常用的语言和工具：</p>
             </div>
             <SkillsShowcase skillsData={SKILLS_DATA} />
           </div>
@@ -82,10 +78,9 @@ if (hasPinnedPosts) {
     }
     <SectionDivider />
     <div class="py-8 pb-10 px-6 sm:px-8">
-      <h2 class="text-2xl sm:text-3xl tracking-tight">Posts</h2>
+      <h2 class="text-2xl sm:text-3xl tracking-tight">文章</h2>
       <p class="text-muted-foreground mb-6 mt-1">
-        {hasPinnedPosts ? `Pinned` : 'Recent'}
-        {showPosts.length} posts, worth a look.
+        {hasPinnedPosts ? '置顶' : '最近'}的 {showPosts.length} 篇，可以看看。
       </p>
       <List posts={showPosts} {type} coverLayout={POSTS_CONFIG.homePageConfig?.coverLayout} />
     </div>

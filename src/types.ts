@@ -58,7 +58,7 @@ export type PostType = 'metaOnly' | 'coverSplit' | 'coverTop'
  * @property {string} description - 文章描述 / Post description
  * @property {string} introduce - 文章介绍 / Post introduce
  * @property {string} author - 作者名称 / Author name
- * @property {PostCardPageConfig} homePageConfig - 首页文章展示配置 / Home page posts display configuration
+ * @property {PostCardPageConfig} homePageConfig - 关于我文章展示配置 / Home page posts display configuration
  * @property {PostCardPageConfig} postPageConfig - 文章列表页展示配置 / Posts list page display configuration
  * @property {PostCardPageConfig} tagsPageConfig - 标签页文章展示配置 / Post display configuration for tags page
  * @property {boolean} ogImageUseCover - 是否使用文章封面图作为OGP图片 / Whether to use the article cover image as the OGP image

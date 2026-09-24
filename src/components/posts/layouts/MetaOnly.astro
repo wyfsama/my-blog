@@ -53,7 +53,7 @@ const recommendText = POSTS_CONFIG.recommendText
               POSTS_CONFIG.wordCountView && wordCount && (
                 <div class="flex items-center gap-1.5">
                   <span class="icon-[ph--pencil-simple-line] w-4 h-4 opacity-85" />
-                  <span>{wordCount} words</span>
+                  <span>{wordCount} 字</span>
                 </div>
               )
             }
@@ -61,7 +61,7 @@ const recommendText = POSTS_CONFIG.recommendText
               ANALYTICS_CONFIG.vercount?.enabled && (
                 <div class="flex items-center gap-1.5">
                   <span class="icon-[ph--eye] w-4 h-4 opacity-85" />
-                  <span id="vercount_value_page_pv">Loading</span> views
+                  <span id="vercount_value_page_pv">加载中</span> 次阅读
                 </div>
               )
             }

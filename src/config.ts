@@ -14,11 +14,10 @@ import type {
 
 //--- Readme Page Config ---
 export const SITE: Site = {
-  title: 'Litos',
-  description:
-    'Litos is a modern blogging theme built on Astro.js, designed for developers. It supports multiple post layouts, photo displays, project displays, and more, providing an elegant user experience and powerful customization capabilities.',
+  title: '9¾',
+  description: '....',
   website: 'https://litos.vercel.app/',
-  lang: 'en',
+  lang: 'zh-CN',
   base: '/',
   author: 'Dnzzk2',
   ogImage: '/og-image.webp',
@@ -28,38 +27,38 @@ export const SITE: Site = {
 
 export const HEADER_LINKS: Link[] = [
   {
-    name: 'Posts',
+    name: '文章',
     url: '/posts',
   },
   {
-    name: 'Projects',
+    name: '项目',
     url: '/projects',
   },
   {
-    name: 'Photos',
+    name: '照片',
     url: '/photos',
   },
 ]
 
 export const FOOTER_LINKS: Link[] = [
   {
-    name: 'Readme',
+    name: '关于我',
     url: '/',
   },
   {
-    name: 'Posts',
+    name: '文章',
     url: '/posts',
   },
   {
-    name: 'Projects',
+    name: '项目',
     url: '/projects',
   },
   {
-    name: 'Tags',
+    name: '标签',
     url: '/tags',
   },
   {
-    name: 'Photos',
+    name: '照片',
     url: '/photos',
   },
 ]
@@ -221,9 +220,9 @@ export const GITHUB_CONFIG: GithubConfig = {
 
 //--- Posts Page Config ---
 export const POSTS_CONFIG: PostConfig = {
-  title: 'Posts',
-  description: 'Posts by Dnzzk2',
-  introduce: 'Here, I will share the usage instructions for this theme to help you quickly use it.',
+  title: '文章',
+  description: 'Dnzzk2 的文章',
+  introduce: '在这里记录用法和随笔。',
   author: 'Dnzzk2',
   homePageConfig: {
     size: 2,
@@ -241,14 +240,14 @@ export const POSTS_CONFIG: PostConfig = {
   ogImageUseCover: false,
   postType: 'metaOnly',
   imageDarkenInDark: true,
-  readMoreText: 'Read more',
-  prevPageText: 'Previous',
-  nextPageText: 'Next',
-  tocText: 'On this page',
-  backToPostsText: 'Back to Posts',
-  nextPostText: 'Next Post',
-  prevPostText: 'Previous Post',
-  recommendText: 'REC',
+  readMoreText: '继续阅读',
+  prevPageText: '上一页',
+  nextPageText: '下一页',
+  tocText: '本页目录',
+  backToPostsText: '返回文章',
+  nextPostText: '下一篇',
+  prevPostText: '上一篇',
+  recommendText: '推荐',
   wordCountView: true,
 }
 
@@ -261,7 +260,7 @@ export const COMMENT_CONFIG: CommentConfig = {
     repo: 'gitalk-comment',
     owner: 'Dnzzk2',
     admin: ['Dnzzk2'],
-    language: 'en-US',
+    language: 'zh-CN',
     perPage: 5,
     pagerDirection: 'last',
     createIssueManually: false,
@@ -271,21 +270,21 @@ export const COMMENT_CONFIG: CommentConfig = {
 }
 
 export const TAGS_CONFIG: TagsConfig = {
-  title: 'Tags',
-  description: 'All tags of Posts',
-  introduce: 'All the tags for posts are here, you can click to filter them.',
+  title: '标签',
+  description: '全部文章标签',
+  introduce: '文章的标签都在这里，点击可以筛选。',
 }
 
 export const PROJECTS_CONFIG: ProjectConfig = {
-  title: 'Projects',
-  description: 'The examples of my projects.',
-  introduce: 'The examples of my projects.',
+  title: '项目',
+  description: '做过的一些项目。',
+  introduce: '做过的一些项目。',
 }
 
 export const PHOTOS_CONFIG: PhotosConfig = {
-  title: 'Photos',
-  description: 'Here I will record some photos taken in daily life.',
-  introduce: 'Here I will record some photos taken in daily life.',
+  title: '照片',
+  description: '日常拍下的一些照片。',
+  introduce: '日常拍下的一些照片。',
 }
 
 export const ANALYTICS_CONFIG: AnalyticsConfig = {

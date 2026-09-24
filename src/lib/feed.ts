@@ -41,10 +41,11 @@ export function removeInvalidXmlChars(text: string): string {
   return text.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '')
 }
 
-// 获取所有图片资源 - 修正类型
-const imageModules = import.meta.glob<{ default: ImageMetadata }>('/src/content/posts/**/assets/*.{jpeg,jpg,png,gif,webp,svg}', {
-  eager: true,
-})
+// 获取所有图片资源（文章旁 assets/ + 统一 attachments/）
+const imageModules = import.meta.glob<{ default: ImageMetadata }>(
+  ['/src/content/posts/**/assets/*.{jpeg,jpg,png,gif,webp,svg}', '/src/content/attachments/*.{jpeg,jpg,png,gif,webp,svg}'],
+  { eager: true },
+)
 
 // 清理HTML内容，回归markdown本质
 function cleanHtmlForRSS(htmlContent: string): string {
@@ -99,9 +100,14 @@ async function processImagePaths(htmlContent: string, siteUrl: string, postId: s
       continue
     }
 
-    // 处理相对路径图片
-    if (src.startsWith('assets/')) {
-      const imagePath = `/src/content/posts/${postId}/${src}`
+    // 处理相对路径图片：../attachments/（统一附件）或 assets/（旧写法）
+    const imagePath = src.startsWith('../attachments/') || src.startsWith('attachments/')
+      ? `/src/content/attachments/${src.replace(/^(\.\.\/)?attachments\//, '')}`
+      : src.startsWith('assets/')
+        ? `/src/content/posts/${postId}/${src}`
+        : null
+
+    if (imagePath) {
       const imageModule = imageModules[imagePath]
 
       if (imageModule && imageModule.default) {
@@ -115,7 +121,7 @@ async function processImagePaths(htmlContent: string, siteUrl: string, postId: s
         } catch (error) {
           console.warn(`Failed to process image: ${imagePath}`, error)
           // 回退到基本的绝对路径
-          const fallbackUrl = `${siteUrl}/src/content/posts/${postId}/${src}`
+          const fallbackUrl = `${siteUrl}${imagePath}`
           const newImgTag = `<img${beforeSrc}src="${fallbackUrl}"${afterSrc}>`
           processedContent = processedContent.replace(fullMatch, newImgTag)
         }

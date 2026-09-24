@@ -2,12 +2,12 @@
 import Layout from '~/layouts/Layout.astro'
 ---
 
-<Layout title="Page Not Found" description="404 Page">
+<Layout title="页面不存在" description="404">
   <div class="not-found flex-1 flex justify-center font-mono">
     <div class="relative z-[1] w-full global-layout-width py-12 px-8 text-sm">
       <div class="flex items-center text-muted-foreground mb-2 animate-fade-in">
         <span class="text-green-500 mr-2 w-4 text-center">$</span>
-        <span class="animate-typing" style="animation-delay: 0s;">Nice to meet you！</span>
+        <span class="animate-typing" style="animation-delay: 0s;">你好。</span>
       </div>
       <div class="flex items-center text-muted-foreground mb-2 animate-fade-in" style="animation-delay: 0.3s">
         <span class="text-green-500 mr-2 w-4 text-center">$</span>
@@ -15,11 +15,11 @@ import Layout from '~/layouts/Layout.astro'
       </div>
       <div class="flex items-center text-muted-foreground mb-2 animate-fade-in" style="animation-delay: 0.5s">
         <span class="text-red-500 mr-2 w-4 text-center">✗</span>
-        <span class="animate-typing" style="animation-delay: 0.5s">Error: Directory not found！</span>
+        <span class="animate-typing" style="animation-delay: 0.5s">错误：找不到这个目录。</span>
       </div>
       <div class="flex items-center text-muted-foreground mb-2 animate-fade-in" style="animation-delay: 0.7s">
         <span class="text-green-500 mr-2 w-4 text-center">$</span>
-        <span class="animate-typing text-muted-foreground/50" style="animation-delay: 0.7s">Available commands:</span>
+        <span class="animate-typing text-muted-foreground/50" style="animation-delay: 0.7s">可用命令：</span>
       </div>
       <div class="flex items-center text-muted-foreground mb-2 ml-5 animate-fade-in" style="animation-delay: 0.9s">
         <span class="text-blue-500 mr-2 w-4 text-center">›</span>
@@ -75,7 +75,7 @@ import Layout from '~/layouts/Layout.astro'
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.animate-typing').forEach((el) => {
       const text = el.textContent || ''
-      ;(el as HTMLElement).style.setProperty('--typing-width', `${text.length}ch`)
+      ;(el as HTMLElement).style.setProperty('--typing-width', `${text.length}em`)
     })
   })
 </script>

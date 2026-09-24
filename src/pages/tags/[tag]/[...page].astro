@@ -30,7 +30,7 @@ interface Props {
 }
 
 const { page, tag } = Astro.props
-const description = `Posts with the tag #${tag}`
+const description = `标签为 #${tag} 的文章`
 ---
 
 <Layout title={`#${tag}`} {description}>
@@ -40,7 +40,7 @@ const description = `Posts with the tag #${tag}`
         <nav class="flex items-center gap-3 text-sm text-muted-foreground/80">
           <a href="/tags" class="group flex items-center gap-2 hover:text-primary transition-colors">
             <span class="icon-[ph--tag-simple] w-4 h-4"></span>
-            <span>Tags</span>
+            <span>标签</span>
           </a>
           <span class="text-muted-foreground/30">/</span>
           <span class="text-foreground/90">#{tag}</span>

@@ -60,7 +60,7 @@ const projects = await getAllProjects()
                     <div class="flex items-center py-1.5 gap-3">
                       {project.data.star != null && (
                         <>
-                          <span class="text-xs uppercase tracking-wide font-medium text-muted-foreground">Stars</span>
+                          <span class="text-xs uppercase tracking-wide font-medium text-muted-foreground">星标</span>
                           <span class="font-semibold text-lg tracking-wider">
                             <NumberTicker play value={project.data.star} client:load githubRepo={githubRepo} githubType="stars" />
                           </span>
@@ -70,7 +70,7 @@ const projects = await getAllProjects()
                     <div class="flex items-center py-1.5 gap-3">
                       {project.data.fork != null && (
                         <>
-                          <span class="text-xs uppercase tracking-wide font-medium text-muted-foreground">Forks</span>
+                          <span class="text-xs uppercase tracking-wide font-medium text-muted-foreground">复刻</span>
                           <span class="font-semibold text-lg tracking-wider">
                             <NumberTicker play value={project.data.fork} client:load githubRepo={githubRepo} githubType="forks" />
                           </span>
@@ -86,7 +86,7 @@ const projects = await getAllProjects()
                         class="hover:text-zinc-600 dark:hover:text-zinc-100 flex items-center gap-1"
                       >
                         <span class="icon-[mdi--web] size-4" />
-                        <span>Website</span>
+                        <span>网站</span>
                       </a>
                     )}
                     {project.data.githubUrl && (

@@ -42,7 +42,7 @@ const iconClass = iconConfig[type]
   type === 'tag' ? (
     <a
       href={`/tags/${content}`}
-      aria-label={`View posts tagged with ${content}`}
+      aria-label={`查看标签为 ${content} 的文章`}
       class={cn(
         'inline-flex items-center font-medium  transition-colors duration-200 select-none',
         sizeClasses[size],
@@ -61,7 +61,7 @@ const iconClass = iconConfig[type]
         variantClasses[finalVariant],
         className
       )}
-      title="Recommended post"
+      title="推荐文章"
     >
       {showIcon && <span class={iconClass} />}
       <span class="font-semibold tracking-wide">{content}</span>

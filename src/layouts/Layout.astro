@@ -16,12 +16,13 @@ type Props = {
 }
 
 const { title, description, image, disableViewTransition }: Props = Astro.props
+const documentTitle = title === SITE.title ? SITE.title : `${title} | ${SITE.title}`
 ---
 
 <!doctype html>
 <html lang={SITE.lang} transition:name="root" transition:animate={SITE.transition && !disableViewTransition ? 'fade' : 'none'}>
   <head>
-    <Head title={`${title} | ${SITE.title}`} {description} {image} />
+    <Head title={documentTitle} {description} {image} />
   </head>
   <body class="flex flex-col">
     <Header />

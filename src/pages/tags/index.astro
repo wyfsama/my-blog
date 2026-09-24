@@ -29,11 +29,11 @@ const maxCount = Math.max(...sortedTags.map((t) => t.count))
       <div class="mt-6 flex items-center gap-6 text-sm text-muted-foreground">
         <span class="flex items-center gap-1.5">
           <span class="icon-[ph--hash] size-4"></span>
-          {sortedTags.length} tags total
+          {sortedTags.length} 个标签
         </span>
         <span class="flex items-center gap-1.5">
           <span class="icon-[ph--article] size-4"></span>
-          {posts.length} posts total
+          {posts.length} 篇文章
         </span>
       </div>
     </div>
@@ -82,7 +82,7 @@ const maxCount = Math.max(...sortedTags.map((t) => t.count))
       sortedTags.length === 0 && (
         <div class="text-center py-12">
           <span class="icon-[ph--tag] size-12 text-muted-foreground/50 mx-auto block mb-4" />
-          <p class="text-muted-foreground">No tags available</p>
+          <p class="text-muted-foreground">还没有标签</p>
         </div>
       )
     }

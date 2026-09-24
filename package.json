@@ -8,11 +8,15 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "validate": "node scripts/validate-content.mjs",
+    "publish:content": "node scripts/publish-content.mjs",
+    "publish:content:watch": "node scripts/publish-content.mjs --watch",
     "astro": "astro",
     "format": "prettier . --check --ignore-unknown",
     "format:write": "prettier . --write --ignore-unknown --cache",
     "postbuild": "pagefind --site dist"
   },
+  "packageManager": "pnpm@9.15.9",
   "dependencies": {
     "@astrojs/react": "^5.0.3",
     "@floating-ui/react": "^0.27.19",

@@ -22,3 +22,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Obsidian vault metadata (keep notes + attachments in git)
+**/.obsidian/
+
+# local deploy / tooling
+.vercel/
+build-verbose.log
